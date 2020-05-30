@@ -29,19 +29,20 @@ int main(){
     
     int t;
     cin >> t;
+    int z = 1;
     
     while(t--) {
 		int n, m, x , y;
 		cin >> n >> m >> x >> y;
 		
-		vector<vector<char>> a(n, vector<char> (m));
+		vector<string> a(n);
 		
 		int numofdots = 0;
 		int money = 0;
 		
 		rr(i, n) {
+			cin >> a[i];
 			rr(j, m) {
-				cin >> a[i][j];
 				if(a[i][j] == '.') numofdots++;
 			}
 		}
@@ -68,7 +69,17 @@ int main(){
 			cout << money << endl;
 		}
 		
+		if(z == 28) {
+			
+			cout << n << m << x << y;
+			
+			rr(i, n) {
+				cout << a[i] << endl;
+			}
+			
+		}
 		
+		z++;
 		
 	}
 
