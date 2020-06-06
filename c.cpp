@@ -1,7 +1,7 @@
 /*
  * NoobM
- * File Name : a.cpp
- * Date : 04.06.2020 20:37:36 +06
+ * File Name : c.cpp
+ * Date : 04.06.2020 21:25:07 +06
  * Version : 1.0
  * 
  * Copyright 2020 Mehedi <imehedi357@gmail.com>
@@ -22,6 +22,11 @@
 #define bug(x) cout << #x << " " << x << endl
 
 using namespace std;
+
+long long highestpoweroftwo(long long n) {
+	long long k = floor(log2(n));
+	return k + 1;
+}
  
 int main(){
     cin.tie(0);
@@ -30,37 +35,32 @@ int main(){
     int t;
     cin >> t;
     
-    while(t--) {
-		long long a, b;
-		cin >> a >> b;
+    while (t--) {
+		long long n;
+		cin >> n;
 		
-		long long s = min(a, b);
-		long long m = max(a, b);
+		//long long ones = (n + 1) / 2;
 		
-		if(s == m) cout << 0 << endl;
-		else if(m % s != 0) cout << -1 << endl;
-		else {
-			long long d = m / s;
-			long long counter = 0;
-			while (d % 8 == 0) {
-				counter++;
-				d /= 8;
-			}
-			while (d % 4 == 0) {
-				counter++;
-				d /= 4;
-			}
-			while (d % 2 == 0) {
-				counter++;
-				d /= 2;
-			}
+		long long p = highestpoweroftwo(n);
+		
+		long long ans = 0;
+		
+		long long k = 1;
+		
+		
+		for(long long i = 1; i <= p; i++) {
+			//bug(i);
+			//cout << n - pow(2, (i - 1)) << endl;
+			if(n - k < 0) break;
+			long long st = ((n - k) / (k*2)) + 1 ;
+			//bug(st);
+			ans = ans + (st * i);	
 			
-			if(d == 1) cout << counter << endl;
-			else cout << -1 << endl;
-				
+			k *= 2;
+			//bug(ans);	
 		}
-		
-		
+		if(n == 1) ans = 1;
+		cout << ans << endl;
 		
 	}
 

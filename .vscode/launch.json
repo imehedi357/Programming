@@ -4,6 +4,8 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
+
         {         "name": "g++-9 - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
@@ -21,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "g++-9 build active file",
+            "preLaunchTask": "g++ 17",
             "miDebuggerPath": "/usr/bin/gdb"
         }
     ]

@@ -31,29 +31,11 @@ int main(){
 	cin >> t;
 
 	while(t--) {
-		int n, x;
-		cin >> n >> x;
+		string s;
+        cin >> s;
 
-		vina;
-		int e = 0;
-		int o = 0;
-
-		for(int z : a) {
-			if(z % 2 == 0) e++;
-			else o++;
-
-		}
-		if(o % 2 == 0 && o > 0) o--;
-		int i = 1;
-		int k = x;
-		for(; i <= o; i += 2) {
-			if (k - i < 0) break;
-		}
-
-		x = x - min(i - 2, o);
-		
-		if(x <= e && o) cout << "Yes" << endl;
-		else cout << "No" << endl;
+        int n = s.size();
+        for(int )
 	}
 	
     return 0;

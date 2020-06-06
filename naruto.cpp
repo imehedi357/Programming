@@ -1,7 +1,7 @@
 /*
  * NoobM
- * File Name : 189a.cpp
- * Date : 23.05.2020 02:53:58 +06
+ * File Name : naruto.cpp
+ * Date : 04.06.2020 00:37:31 +06
  * Version : 1.0
  * 
  * Copyright 2020 Mehedi <imehedi357@gmail.com>
@@ -28,33 +28,37 @@ int main(){
     ios_base::sync_with_stdio(false);
     
     int t;
-	cin >> t;
-
-	while(t--) {
-		int n, x;
-		cin >> n >> x;
-
-		vina;
-		int e = 0;
-		int o = 0;
-
-		for(int z : a) {
-			if(z % 2 == 0) e++;
-			else o++;
-
-		}
-		if(o % 2 == 0 && o > 0) o--;
-		int i = 1;
-		int k = x;
-		for(; i <= o; i += 2) {
-			if (k - i < 0) break;
-		}
-
-		x = x - min(i - 2, o);
+    cin >> t;
+    
+    while (t--) {
+		int n, z;
+		cin >> n >> z;
 		
-		if(x <= e && o) cout << "Yes" << endl;
-		else cout << "No" << endl;
+		priority_queue <int> q;
+		
+		while(n--) {
+			int x;
+			cin >> x;
+			q.push(x);
+		}
+		int counter = 0;
+		while(z>0) {
+			if(q.top() == 0) break;
+			else {
+				counter++;
+				int l = q.top();
+				q.pop();
+				z -= l;
+				l = l >> 1;
+				q.push(l);
+				
+			}
+		}
+		
+		if(z > 0) cout << "Evacuate" << endl;
+		else cout << counter << endl;
+		
 	}
-	
+
     return 0;
 }
