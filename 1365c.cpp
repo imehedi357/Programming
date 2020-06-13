@@ -46,25 +46,30 @@ int main(){
 		s[x] = i;
 	}
 	
-	int k;
+	vector<int> k(n+5);
 	rr(i, n) {
 		int x = i + 1;
 		
-		int d = f[i] - s[i];
+		int d = f[x] - s[x];
 		
 		if(d < 0) {
-			d = n - s[i] - f[i];
+			d = n - s[x] + f[x];
 		}
 		
 		k[d]++;
 	}
 	
+	// 1 4 2 5 8
+	// 0 1 1 0 1
+	int mx = 1;
 	
-	int max = 1;
-	
-	for(auto x : k) {
-		max = (x.second, max);
+	for(int i = 0; i <= n; i++) {
+		mx = max(k[i], mx);
 	}
+	
+	cout << mx << endl;
+	
+	//pvec(k);
  
     return 0;
 }

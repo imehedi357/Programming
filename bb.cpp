@@ -41,53 +41,24 @@ int main(){
 		
 		sort(k.begin(), k.end());
 		
-		//22int flag = 0;
-		
-		/*for(int i = 0; i < n; i++) {
-			int min = k[i];
-			int pos = b[i];
-			if(min = a[i]) continue;
-			for(int j = i; j < n; j++) {
-				if(a[j] == min) {
-					if(pos == b[j]) {
-						flag = 1;
-						
-					}
-				}
-			}
-			
-		}*/
-		
-		for(int i = 0; i < n; i++) {
-			int flag = 0;
-			for(int j = 0; j < n; j++) {
-				if(a[j] > a[i]) {
-					if(b[i] != b[j]) {
-						swap(a[i], a[j]);
-						swap(b[i], b[j]);
-						flag++;
-					}
-					
-				}
-			}
-			if(flag == 0) {
-				break;
-			}
-			
-		}
-		
-		int flag2 = 0;
+		int flag = 0;
 		
 		rr(i, n) {
-			if(a[i] != k[i]) {
-				flag2 = 1;
-				break;
-			}
-			
+			if(a[i] != k[i]) flag = 1;
 		}
 		
-		if(flag2 == 1) cout << "No" << endl;
-		else cout << "Yes" << endl;
+		bool one = false, zero = false;
+		
+		rr(i, n) {
+			if(b[i] == 1) one = true;
+			if(b[i] == 0) zero = true;
+		}
+		if(flag == 0) cout << "Yes" << endl;
+		else {
+			if (one == true && zero == true)
+				cout << "Yes" << endl;
+			else cout << "No" << endl;
+		}
 	}
 
     return 0;
