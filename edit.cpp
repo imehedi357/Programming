@@ -51,13 +51,6 @@ int main(){
 		}
 		
 	}
-	
-	/*rr(i, n + 1) {
-		rr(j, m + 1) {
-			cout << dp[i][j] << " ";
-		}
-		cout << endl;
-	}*/
     
 	cout << dp[n][m] << endl;
 	

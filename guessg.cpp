@@ -23,59 +23,48 @@ void solve() {
 	char ans2;
 	char ans3;
 	
-	//int counter = 1;
-	
-	ll y = 1;
+	int y = 1;
 	
 	cout << 1 << endl;
 	cin >> ans;
 	if(ans == 'E') return;
+    
+    cout << n << endl;
+    cin >> ans;]
+    if(ans == 'E') return;
+
 	
-	cout << n << endl;
-	cin >> ans;
-	if(ans == 'E') return;
-	
-	//while(ans != 'L') {
-	//	cout << 1 << endl;
-	//	cin >> ans;
-	//	counter++;		
-	//}
-	
-	map<char, int> mp;
-	
-	
-	
-	ll high = n;
-	ll low = 1;
+	int high = n;
+	int low = 1;
 	
 	//int f = 2;
 	
 	bool f = false;
+	bool ok = false;
 	
 	while(ans != 'E') {
-		mp['G'] = 0;
-		mp['L'] = 0;
+		//if(f % 2 == 0) 
 		
+        y = low + (high - low)/2;
+        cout << n << endl;
+        cin >> ans3;
 		
-		y = (high + low)/2;
+		cout << y << endl;
+		cin >> ans;
 		
-		//cout << y << endl;
-		//cin >> ans;
-			
-		//ans2 = ans;
+		if(ans == 'E') break;
 		
-		for(int i = 0; i < 10; i++) {
-			cout << y << endl;
-			cin >> ans;
-			mp[ans]++;
+		cout << 1 << endl;
+		cin >> ans2;
+		
+		if(ans2 == 'L' || ans3 == 'G') {
+			if(ans == 'G') {
+				low = y + 1;
+			}
+			else if(ans == 'L') {
+				high = y - 1;
+			}
 		}
-		
-		if(mp['L'] > mp['G']) {			
-			high = y - 1;
-		}
-		else if(mp['L'] < mp['G']) {
-			low = y + 1;			
-		}		
 	}
 }
  
